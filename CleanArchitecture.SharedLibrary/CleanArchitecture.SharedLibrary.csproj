@@ -11,7 +11,11 @@
    <Version>1.0.0</Version>
    <Company>Kode4Hue</Company>
    <Description>This is shared/reusable library to be used for Clean Architecture project templates</Description>
-   <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+   <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+   <RepositoryUrl>https://github.com/Kode4Hue/CleanArchitecture.SharedLibrary</RepositoryUrl>
+   <PackageTags>clean-architecture</PackageTags>
+   <AssemblyName>CleanArchitecture.SharedLibrary</AssemblyName>
+   <PackageId>Kode4Hue.CleanArchitecture.SharedLibrary</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
