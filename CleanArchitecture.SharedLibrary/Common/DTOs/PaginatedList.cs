@@ -11,6 +11,10 @@ namespace CleanArchitecture.SharedLibrary.Common.DTOs
         public int TotalPages { get; set; }
         public int ItemsPerPage { get; set; }
 
+        public PaginatedList()
+        {
+        }
+
         public PaginatedList(List<T> items, int count, int currentPageNumber, int itemsPerPage)
         {
             CurrentPageNumber = currentPageNumber;
