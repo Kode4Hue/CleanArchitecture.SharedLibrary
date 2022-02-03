@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Hubert Graham",
+    "classifications": [ ".NET Standard 2.1", "Shared Library", "Template"],
+    "identity": "Kode4Hue.CleanArchitecture.SharedLibrary",
+    "shortName": "Kode4Hue.CleanArchitecture.SharedLibrary",
+    "name": "Kode4Hue.CleanArchitecture.SharedLibrary",
+    "tags": {
+	    "language": "C#",
+	    "type": "project"
+	  },
+    "sourceName": "CleanArchitecture.SharedLibrary",
+    "preferNameDirectory": true
+}
