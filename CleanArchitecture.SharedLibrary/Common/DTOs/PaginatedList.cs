@@ -13,6 +13,7 @@ namespace CleanArchitecture.SharedLibrary.Common.DTOs
 
         public PaginatedList()
         {
+            Items = new List<T>();
         }
 
         public PaginatedList(List<T> items, int count, int currentPageNumber, int itemsPerPage)
