@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System;
 using CleanArchitecture.SharedLibrary.Common.Exceptions;
-using CleanArchitecture.Application.Common.Exceptions;
 using Microsoft.AspNetCore.Http;
+using CleanArchitecture.SharedLibrary.Security.Exceptions;
+using ForbiddenAccessException = CleanArchitecture.SharedLibrary.Security.Exceptions.ForbiddenAccessException;
 
 namespace CleanArchitecture.SharedLibrary.Http.Filters;
 public class ApiExceptionFilterAttribute : ExceptionFilterAttribute

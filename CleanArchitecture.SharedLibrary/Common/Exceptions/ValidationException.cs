@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace CleanArchitecture.SharedLibrary.Common.Exceptions;
 
+[Serializable]
 public class ValidationException : Exception
 {
     public ValidationException()

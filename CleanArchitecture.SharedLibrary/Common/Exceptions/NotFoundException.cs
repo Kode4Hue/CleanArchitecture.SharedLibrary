@@ -2,7 +2,9 @@
 
 namespace CleanArchitecture.SharedLibrary.Common.Exceptions;
 
- public class NotFoundException : Exception
+
+[Serializable]
+public class NotFoundException : Exception
 {
     public NotFoundException()
         : base()

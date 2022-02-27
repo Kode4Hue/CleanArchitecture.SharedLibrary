@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CleanArchitecture.Application.Common.Exceptions;
+namespace CleanArchitecture.SharedLibrary.Security.Exceptions;
 
 public class ForbiddenAccessException : Exception
 {
