@@ -8,7 +8,7 @@
   <PropertyGroup>
    <LangVersion>10</LangVersion>
    <Authors>Hubert Graham</Authors>
-   <Version>1.1.1</Version>
+   <Version>1.1.2</Version>
    <Company>Kode4Hue</Company>
    <Description>This is shared/reusable library to be used for Clean Architecture project templates</Description>
    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>

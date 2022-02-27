@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using ValidationErrors = CleanArchitecture.SharedLibrary.Common.Exceptions;
 
-namespace CleanArchitecture.Application.Common.Behaviours;
+namespace CleanArchitecture.SharedLibrary.Common.Behaviours;
 
 public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
      where TRequest : notnull
