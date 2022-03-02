@@ -25,7 +25,7 @@ jobs:
     - name: Dotnet Restore dependencies
       run: dotnet restore
     - name: Dotnet Build Project
-      run: dotnet build '${{ env.PROJECT_FOLDER }}/${{ env.PROJECT_FILE_NAME }}' --configuration Release
+      run: dotnet build 'CleanArchitecture.SharedLibrary/CleanArchitecture.SharedLibrary.csproj' --configuration Release
     - name: Package the library
       run: dotnet pack --configuration Release --no-restore --nobuild --include-symbols --output ${{ env.PACKAGE_OUTPUT_DIR }}
     - name: Run Tests
