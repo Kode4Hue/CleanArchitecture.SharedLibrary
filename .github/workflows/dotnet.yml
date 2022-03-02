@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  PROJECT_FOLDER: 'CleanArchitecture.SharedLibrary'
+  PROJECT_FOLDER: 'CleanArchitecture.SharedLibrary/CleanArchitecture.SharedLibrary'
   PROJECT_FILE_NAME: 'CleanArchitecture.SharedLibrary.csproj'
   PACKAGE_OUTPUT_DIR: ${{ github.workspace }}/artefacts
   NUGET_SOURCE_URL: 'https://nuget.pkg.github.com/Kode4Hue/index.json'
@@ -25,7 +25,7 @@ jobs:
     - name: Dotnet Restore dependencies
       run: dotnet restore
     - name: Dotnet Build Project
-      run: dotnet build --configuration Release
+      run: dotnet build '${{ env.PROJECT_FOLDER }}/${{ env.PROJECT_FILE_NAME }}' --configuration Release
     - name: Package the library
       run: dotnet pack --configuration Release --no-restore --nobuild --include-symbols --output ${{ env.PACKAGE_OUTPUT_DIR }}
     - name: Run Tests
