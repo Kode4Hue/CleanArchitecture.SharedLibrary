@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  PROJECT_FOLDER: 'CleanArchitecture.SharedLibrary/CleanArchitecture.SharedLibrary'
+  PROJECT_FOLDER: 'CleanArchitecture.SharedLibrary'
   PROJECT_FILE_NAME: 'CleanArchitecture.SharedLibrary.csproj'
   PACKAGE_OUTPUT_DIR: ${{ github.workspace }}/artefacts
   NUGET_SOURCE_URL: 'https://nuget.pkg.github.com/Kode4Hue/index.json'
