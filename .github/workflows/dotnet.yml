@@ -5,10 +5,10 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
+    
 env:
   PROJECT_FOLDER: 'CleanArchitecture.SharedLibrary'
-  PROJECT_FILE_PATH: '${{ env.PROJECT_FOLDER }}/CleanArchitecture.SharedLibrary.csproj'
+  PROJECT_FILE_PATH: 'CleanArchitecture.SharedLibrary/CleanArchitecture.SharedLibrary.csproj'
   PACKAGE_OUTPUT_DIR: ${{ github.workspace }}/artefacts
   NUGET_SOURCE_URL: 'https://nuget.pkg.github.com/Kode4Hue/index.json'
 
