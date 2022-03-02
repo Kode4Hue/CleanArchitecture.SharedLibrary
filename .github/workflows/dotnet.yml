@@ -27,7 +27,7 @@ jobs:
     - name: Dotnet Build Project
       run: dotnet build '${{ env.PROJECT_FILE_PATH }}' --configuration Release
     - name: Package the library
-      run: dotnet pack '${{ env.PROJECT_FILE_PATH }}' --configuration Release --no-restore --nobuild --include-symbols --output ${{ env.PACKAGE_OUTPUT_DIR }}
+      run: dotnet pack ${{ env.PROJECT_FILE_PATH }} --no-restore --nobuild --configuration Release  --include-symbols 
     - name: Run Tests
       run: dotnet test --no-build --verbosity normal
     - name: Publish the Package to Github
