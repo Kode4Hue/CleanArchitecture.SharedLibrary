@@ -22,11 +22,13 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Restore dependencies
+    - name: Dotnet Restore dependencies
       run: dotnet restore
+    - name: Dotnet Build Project
+      run: dotnet build ${{ env.PACKAGE_OUTPUT_DIR }}\${{ env.PROJECT_FILE_NAME }} --configuration Release
     - name: Package the library
       run: dotnet pack --configuration Release --no-restore --nobuild --include-symbols --output ${{ env.PACKAGE_OUTPUT_DIR }}
     - name: Run Tests
       run: dotnet test --no-build --verbosity normal
     - name: Publish the Package to Github
-    - run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIR }}\*.nupkg -s ${{ NUGET_SOURCE_URL }}
+      run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIR }}\*.nupkg -s ${{ NUGET_SOURCE_URL }}
