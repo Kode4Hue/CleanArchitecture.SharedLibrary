@@ -1,11 +1,12 @@
 ﻿using CleanArchitecture.SharedLibrary.Common.Constants;
 using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.SharedLibrary.Http.Helpers
+namespace CleanArchitecture.SharedLibrary.Http.Helpers.Network
 {
     public static class HttpClientContentHelper<T>
     {
@@ -36,7 +37,19 @@ namespace CleanArchitecture.SharedLibrary.Http.Helpers
         }
         private static T DeserializeObjectFromString(string textContent)
         {
-            return JsonConvert.DeserializeObject<T>(textContent);
+            if (string.IsNullOrEmpty(textContent))
+            {
+                throw new ArgumentNullException(nameof(textContent));
+            }
+
+            var deserializedContent =  JsonConvert.DeserializeObject<T>(textContent);
+
+            if(deserializedContent is null)
+            {
+                throw new Exception("Error: Could not deserialize content");
+            }
+
+            return deserializedContent;
         }
 
         private static string GetStringContentFromStreamReader(StreamReader reader)
