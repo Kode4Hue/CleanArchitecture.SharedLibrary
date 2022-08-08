@@ -1,4 +1,6 @@
 ﻿using CleanArchitecture.SharedLibrary.Http.Exceptions;
+using CleanArchitecture.SharedLibrary.Http.Factories;
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -7,36 +9,42 @@ namespace CleanArchitecture.SharedLibrary.Http.Services
     public class BaseHttpService
     {
         protected HttpClient HttpClient;
-        public BaseHttpService(HttpClient httpClient)
+        public BaseHttpService(ICustomHttpClientFactory httpClientFactory)
         {
-            HttpClient = httpClient;
-        }
-
-        public BaseHttpService(IHttpClientFactory httpClientFactory, string httpClientName)
-        {
-            HttpClient = httpClientFactory.CreateClient(httpClientName);
+            HttpClient = httpClientFactory.GetInstance();
         }
 
         protected HttpRequestMessage GenerateHttpRequest(HttpMethod method,
-          string requestUri, HttpContent? content = default(HttpContent))
+            string requestUri, HttpContent? content = null)
         {
-            return new HttpRequestMessage(method, requestUri)
+
+            var httpRequestMessage = new HttpRequestMessage(method, requestUri);
+
+            if (content is not null)
             {
-                Content = content
-            };
+                httpRequestMessage.Content = content;
+            }
+            
+            return httpRequestMessage;
         }
 
         protected async Task<HttpResponseMessage> MakeRequest(HttpRequestMessage request)
         {
             HttpResponseMessage responseMessage;
-
-            responseMessage = await HttpClient.SendAsync(request);
-
-            if (!responseMessage.IsSuccessStatusCode)
+            try
             {
-                var statusCode = (int)responseMessage.StatusCode;
-                throw new ApiException($"API Error occured with status code: {statusCode}",
-                    statusCode, responseMessage.Content);
+                responseMessage = await HttpClient.SendAsync(request);
+
+                if (!responseMessage.IsSuccessStatusCode)
+                {
+                    var statusCode = (int)responseMessage.StatusCode;
+                    throw new ApiException($"API Error occured with status code: {statusCode}",
+                        statusCode, responseMessage.Content);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error occured before sending API request", ex);
             }
 
             return responseMessage;
