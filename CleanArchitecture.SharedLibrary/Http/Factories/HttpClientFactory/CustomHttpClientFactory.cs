@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 
-namespace CleanArchitecture.SharedLibrary.Http.Factories
+namespace CleanArchitecture.SharedLibrary.Http.Factories.HttpClientFactory
 {
     public class CustomHttpClientFactory : ICustomHttpClientFactory
     {
