@@ -8,7 +8,7 @@
   <PropertyGroup>
    <LangVersion>10</LangVersion>
    <Authors>Hubert Graham</Authors>
-   <Version>1.1.7</Version>
+   <Version>1.1.9</Version>
    <Company>Kode4Hue</Company>
    <Description>This is shared/reusable library to be used for Clean Architecture project templates</Description>
    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
@@ -22,8 +22,8 @@
     <PackageReference Include="FluentValidation" Version="10.3.6" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Prism.Core" Version="8.0.0.1909" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
