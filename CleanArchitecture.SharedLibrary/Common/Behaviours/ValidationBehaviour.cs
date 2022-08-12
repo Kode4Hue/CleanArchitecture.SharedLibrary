@@ -9,7 +9,7 @@ using ValidationErrors = CleanArchitecture.SharedLibrary.Common.Exceptions;
 namespace CleanArchitecture.SharedLibrary.Common.Behaviours;
 
 public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-     where TRequest : notnull
+     where TRequest : MediatR.IRequest<TResponse>
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;
 
