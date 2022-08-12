@@ -31,22 +31,7 @@ namespace CleanArchitecture.SharedLibrary.Http.Services
         protected async Task<HttpResponseMessage> MakeRequest(HttpRequestMessage request)
         {
             HttpResponseMessage responseMessage;
-            try
-            {
-                responseMessage = await HttpClient.SendAsync(request);
-
-                if (!responseMessage.IsSuccessStatusCode)
-                {
-                    var statusCode = (int)responseMessage.StatusCode;
-                    throw new ApiException($"API Error occured with status code: {statusCode}",
-                        statusCode, responseMessage.Content);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error occured before sending API request", ex);
-            }
-
+            responseMessage = await HttpClient.SendAsync(request);
             return responseMessage;
         }
     }
