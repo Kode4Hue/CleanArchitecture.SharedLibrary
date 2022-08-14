@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Prism.Ioc;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanArchitecture.SharedLibrary.Http.Factories.HttpClientFactory
 {
     public static class CustomHttpClientFactoryExtensions
     {
 
-        public static IContainerRegistry RegisterCustomHttpClientFactory(this IContainerRegistry containerRegistry)
+        public static IServiceCollection RegisterCustomHttpClientFactory(this IServiceCollection services)
         {
-            containerRegistry.RegisterSingleton<ICustomHttpClientFactory, CustomHttpClientFactory>();
-            return containerRegistry;
+            services.AddSingleton<ICustomHttpClientFactory, CustomHttpClientFactory>();
+            return services;
         }
     }
 }
