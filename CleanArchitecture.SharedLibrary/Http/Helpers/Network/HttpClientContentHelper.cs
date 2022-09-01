@@ -35,6 +35,7 @@ namespace CleanArchitecture.SharedLibrary.Http.Helpers.Network
                 return GetStringContentFromStreamReader(reader);
             }
         }
+
         private static T DeserializeObjectFromString(string textContent)
         {
             if (string.IsNullOrEmpty(textContent))
