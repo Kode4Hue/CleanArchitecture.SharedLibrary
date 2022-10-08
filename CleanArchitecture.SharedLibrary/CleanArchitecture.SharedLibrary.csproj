@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<PropertyGroup>
 		<LangVersion>10</LangVersion>
 		<Authors>Hubert Graham</Authors>
-		<Version>2.0.1</Version>
+		<Version>3.0.0</Version>
 		<Company>Kode4Hue</Company>
 		<Description>This is shared/reusable library to be used for Clean Architecture project templates</Description>
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
@@ -19,14 +19,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FluentValidation" Version="11.2.0" />
-		<PackageReference Include="MediatR" Version="10.0.1" />
+		<PackageReference Include="FluentValidation" Version="11.2.2" />
+		<PackageReference Include="MediatR" Version="11.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-		<PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0-rc.1.22426.10" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0-rc.1.22426.10" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 		<PackageReference Include="Prism.Core" Version="8.1.97" />
-		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+		<PackageReference Include="System.ComponentModel.Annotations" Version="6.0.0-preview.4.21253.7" />
 	</ItemGroup>
 
 </Project>
