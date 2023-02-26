@@ -10,11 +10,11 @@ namespace CleanArchitecture.SharedLibrary.Common.Helpers
         public static async Task<PaginatedList<T>> Create(IQueryable<T> source, int pageNumber, int pageSize)
         {
             int count = 0;
-            List<T> items= new List<T>();
+            List<T> items = new List<T>();
             var task = Task.Run(() =>
             {
-               count = source.Count();
-               items = source.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+                count = source.Count();
+                items = source.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
             });
 
             await task;

@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.SharedLibrary.Http.Exceptions;
-using CleanArchitecture.SharedLibrary.Http.Factories.HttpClientFactory;
-using System;
+﻿using CleanArchitecture.SharedLibrary.Http.Factories.HttpClientFactory;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -24,7 +22,7 @@ namespace CleanArchitecture.SharedLibrary.Http.Services
             {
                 httpRequestMessage.Content = content;
             }
-            
+
             return httpRequestMessage;
         }
 

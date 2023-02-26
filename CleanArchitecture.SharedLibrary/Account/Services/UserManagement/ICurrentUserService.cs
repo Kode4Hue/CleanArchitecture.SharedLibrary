@@ -1,5 +1,4 @@
-﻿
-namespace CleanArchitecture.SharedLibrary.Account.Services
+﻿namespace CleanArchitecture.SharedLibrary.Account.Services.UserManagement
 {
     public interface ICurrentUserService
     {

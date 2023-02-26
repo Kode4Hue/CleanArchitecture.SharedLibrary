@@ -12,7 +12,7 @@ namespace CleanArchitecture.SharedLibrary.Common.Behaviours.Logging
 
         public SimpleLoggingBehaviour(ILogger logger)
         {
-            _logger  = logger;
+            _logger = logger;
         }
 
         public Task Process(TRequest request, CancellationToken cancellationToken)

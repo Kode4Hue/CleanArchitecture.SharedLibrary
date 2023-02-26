@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.SharedLibrary.Account.Services;
+﻿using CleanArchitecture.SharedLibrary.Account.Services.UserManagement;
 using MediatR.Pipeline;
 using Microsoft.Extensions.Logging;
 using System.Threading;
@@ -12,8 +12,8 @@ namespace CleanArchitecture.SharedLibrary.Common.Behaviours.Logging
         private readonly ICurrentUserService _currentUserService;
         private readonly ISimpleIdentityService _identityService;
 
-        public UserRequestLoggingBehaviour(ILogger logger, 
-            ICurrentUserService currentUserService, ISimpleIdentityService identityService) 
+        public UserRequestLoggingBehaviour(ILogger logger,
+            ICurrentUserService currentUserService, ISimpleIdentityService identityService)
         {
             _logger = logger;
             _currentUserService = currentUserService;

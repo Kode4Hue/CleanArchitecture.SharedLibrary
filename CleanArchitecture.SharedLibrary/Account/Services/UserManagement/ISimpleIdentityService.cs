@@ -1,8 +1,7 @@
-﻿
-using CleanArchitecture.SharedLibrary.Common.DTOs;
+﻿using CleanArchitecture.SharedLibrary.Common.DTOs;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.SharedLibrary.Account.Services
+namespace CleanArchitecture.SharedLibrary.Account.Services.UserManagement
 {
     public interface ISimpleIdentityService
     {
