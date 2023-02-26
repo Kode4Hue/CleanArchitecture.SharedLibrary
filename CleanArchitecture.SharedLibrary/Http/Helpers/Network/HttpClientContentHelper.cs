@@ -42,9 +42,9 @@ namespace CleanArchitecture.SharedLibrary.Http.Helpers.Network
                 throw new ArgumentNullException(nameof(textContent));
             }
 
-            var deserializedContent =  JsonConvert.DeserializeObject<T>(textContent);
+            var deserializedContent = JsonConvert.DeserializeObject<T>(textContent);
 
-            if(deserializedContent is null)
+            if (deserializedContent is null)
             {
                 throw new Exception("Error: Could not deserialize content");
             }

@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.SharedLibrary.Account.Services;
+﻿using CleanArchitecture.SharedLibrary.Account.Services.UserManagement;
 using CleanArchitecture.SharedLibrary.Security.Attributes;
 using CleanArchitecture.SharedLibrary.Security.Exceptions;
 using MediatR;
