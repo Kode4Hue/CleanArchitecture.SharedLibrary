@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.SharedLibrary.Http.Helpers.Network
 {
-    public static class HttpClientContentHelper<T>
+    public static class HttpClientContentHelper
     {
 
-        public static StringContent CreateRequestPayloadAsStringContent(T type)
+        public static StringContent CreateRequestPayloadAsStringContent<T>(T type) where T:class
         {
             string payload = SerializeFromObject(type);
             return new StringContent(payload, Encoding.UTF8, MimeTypes.Application.Json);
         }
 
-        public async static Task<T> DeserializeObjectFromHttpContent(HttpContent content)
+        public async static Task<T> DeserializeObjectFromHttpContent<T>(HttpContent content) where T:class
         {
             using (var stream = await content.ReadAsStreamAsync())
             using (var reader = new StreamReader(stream))
             {
                 string textContent = GetStringContentFromStreamReader(reader);
-                return DeserializeObjectFromString(textContent);
+                return DeserializeObjectFromString<T>(textContent);
             }
         }
 
@@ -35,7 +35,7 @@ namespace CleanArchitecture.SharedLibrary.Http.Helpers.Network
                 return GetStringContentFromStreamReader(reader);
             }
         }
-        private static T DeserializeObjectFromString(string textContent)
+        private static T DeserializeObjectFromString<T>(string textContent) where T:class
         {
             if (string.IsNullOrEmpty(textContent))
             {
@@ -57,7 +57,7 @@ namespace CleanArchitecture.SharedLibrary.Http.Helpers.Network
             return reader.ReadToEnd();
         }
 
-        private static string SerializeFromObject(T type)
+        private static string SerializeFromObject<T>(T type) where T: class
         {
             return JsonConvert.SerializeObject(type);
         }
