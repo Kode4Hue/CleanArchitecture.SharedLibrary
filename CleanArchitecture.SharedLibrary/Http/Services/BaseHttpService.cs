@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.SharedLibrary.Http.Factories.HttpClientFactory;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CleanArchitecture.SharedLibrary.Http.Services
@@ -26,10 +27,10 @@ namespace CleanArchitecture.SharedLibrary.Http.Services
             return httpRequestMessage;
         }
 
-        protected async Task<HttpResponseMessage> MakeRequest(HttpRequestMessage request)
+        protected async Task<HttpResponseMessage> MakeRequest(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             HttpResponseMessage responseMessage;
-            responseMessage = await HttpClient.SendAsync(request);
+            responseMessage = await HttpClient.SendAsync(request, cancellationToken: cancellationToken);
             return responseMessage;
         }
     }
