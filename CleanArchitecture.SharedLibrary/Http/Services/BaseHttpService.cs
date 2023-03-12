@@ -4,12 +4,12 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.SharedLibrary.Http.Services
 {
-    public class BaseHttpService
+    public abstract class BaseHttpService
     {
-        protected HttpClient HttpClient;
-        public BaseHttpService(ICustomHttpClientFactory httpClientFactory)
+        protected readonly HttpClient HttpClient;
+        public BaseHttpService(HttpClient httpClient)
         {
-            HttpClient = httpClientFactory.GetInstance();
+            HttpClient = httpClient;
         }
 
         protected HttpRequestMessage GenerateHttpRequest(HttpMethod method,
